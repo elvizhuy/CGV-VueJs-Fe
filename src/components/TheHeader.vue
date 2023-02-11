@@ -13,11 +13,6 @@
         <a href="">ACCOUNT</a>
     </div>
     <div id="line">
-      <ul>
-        <li><hr /></li>
-        <li><hr /></li>
-        <li><hr /></li>
-      </ul>
        <div class="nav-content">
         <a class="CGV-logo" href=""><img src="../../public/assets/logo/cgvlogo.png" alt="" /></a>
       
@@ -45,6 +40,15 @@ export default {};
 </script>
 
 <style>
+#line {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  background: url(../../public/assets/slide/bg-top.png) repeat-x scroll left bottom
+    transparent;
+  background-size: 10px 135px;
+  height: 135px;
+}
 #container{
     text-align: center;
 }
@@ -56,15 +60,7 @@ export default {};
  color: rgb(73 73 73);
  margin: 0 15px;
 }
-#line {
-    position: relative;
-  border-top: 7px solid red;
-  border-bottom: 7px solid red;
-}
-hr {
-  background-color: #999999;
-  height: 1px;
-}
+
 #line>ul {
   list-style: none;
   padding: 0;
@@ -90,7 +86,7 @@ hr {
 }
 .nav-content{
     position: absolute;
-    top: 22%;
+    top: 28%;
     left: 24%;
     display: flex;
     align-items: center;
