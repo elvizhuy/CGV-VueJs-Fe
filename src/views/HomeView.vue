@@ -26,6 +26,7 @@ export default {
 <style>
 .wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   background: url(../../public/assets/slide/bg_c_bricks.png);
 }
