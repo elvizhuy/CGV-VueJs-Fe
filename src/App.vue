@@ -2,7 +2,9 @@
   <header id="header">
     <the-header></the-header>
   </header>
-  <router-view />
+  <main>
+    <router-view />
+  </main>
   <footer>
     <the-footer></the-footer>
   </footer>
@@ -12,16 +14,13 @@
 import TheHeader from "./components/TheHeader.vue";
 import TheFooter from "./components/TheFooter.vue";
 
-
 export default {
   name: "App",
   components: {
     TheHeader,
-    TheFooter}
+    TheFooter,
+  },
 };
 </script>
 
-<style>
-
-
-</style>
+<style></style>

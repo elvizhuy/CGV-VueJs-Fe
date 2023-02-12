@@ -170,6 +170,7 @@ export default {
 .container {
   width: 1430px;
   margin-top: 50px;
+  
 }
 .login-carousel {
   width: 440px;

@@ -1,20 +1,18 @@
 <template>
-    <div class="container">
-        <div class="main-section-info">
-    <ul>
-      <li><a class="theater" href="">cgv theater</a></li>
-      <li><a class="now-sh" href="">now showing</a></li>
-      <li><a class="special" href="">cgv special</a></li>
-      <li><a class="event" href="">cgv gift</a></li>
-      <li><a class="ticket" href="">my ticket info</a></li>
-      <li><a class="dc" href="">discount info</a></li>
-      <li><a class="login" href="">create account quick</a></li>
-    </ul>
-  </div>
-  <hr class="me-auto ms-auto mt-0" width="80%"/>
-  <hr class="me-auto ms-auto mt-0" width="80%"/> 
+  <div class="container">
+    <div class="main-section-info">
+      <ul>
+        <li><a class="theater" href="">cgv theater</a></li>
+        <li><a class="now-sh" href="">now showing</a></li>
+        <li><a class="special" href="">cgv special</a></li>
+        <li><a class="event" href="">cgv gift</a></li>
+        <li><a class="ticket" href="">my ticket info</a></li>
+        <li><a class="dc" href="">discount info</a></li>
+        <li><a class="login" href="">create account quick</a></li>
+      </ul>
     </div>
- 
+    <div class="details"></div>
+  </div>
 </template>
 
 <script>
@@ -22,6 +20,14 @@ export default {};
 </script>
 
 <style>
+.details {
+  background: url(../../public/assets/logo/bg_h3_line.jpg) repeat-x scroll left
+    center rgba(0, 0, 0, 0);
+  height: 60px;
+  text-align: center;
+  width: 1000px;
+  margin: auto;
+}
 .main-section-info {
   background: white;
   display: flex;
@@ -64,5 +70,4 @@ export default {};
 .main-section-info ul li a.login {
   background-position: -830px 0;
 }
-
 </style>
