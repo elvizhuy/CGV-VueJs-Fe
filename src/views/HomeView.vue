@@ -2,9 +2,9 @@
   <the-detail-list></the-detail-list>
     <div id="wrapper" class="wrapper">
       <the-carousel></the-carousel>
-      <movie-selection></movie-selection>
-      <events-of-cgv></events-of-cgv>
     </div>
+    <movie-selection></movie-selection>
+    <events-of-cgv></events-of-cgv>
 </template>
 
 <script>
@@ -26,7 +26,6 @@ export default {
 <style>
 .wrapper {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   background: url(../../public/assets/slide/bg_c_bricks.png);
 }
