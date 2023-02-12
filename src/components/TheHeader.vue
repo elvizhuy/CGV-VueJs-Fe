@@ -10,7 +10,7 @@
         <a href="">CAREERS</a>
         <a href="">NEWS & OFFERS</a>
         <a href="">MY TICKETS</a>
-        <a href="">ACCOUNT</a>
+        <router-link to="/login">ACCOUNT</router-link>
     </div>
     <div id="line">
        <div class="nav-content">
@@ -21,7 +21,6 @@
         <li><a href="">THEATER</a></li>
         <li><a href="">MEMBERSHIP</a></li>
         <li><a href="">CULTUREPLEX</a></li>
-        <li><a href=""></a></li>
       </ul>
       <div class="content-right">
           <img src="../../public/assets/logo/kenhcine.gif" alt="" />
