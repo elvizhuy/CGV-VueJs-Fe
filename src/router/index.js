@@ -1,29 +1,54 @@
-import {createRouter, createWebHistory} from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AuthView from "@/views/AuthView";
-import RegisterView from "@/views/RegisterView"
+import RegisterView from "@/views/RegisterView";
+import DisplayMovieList from "@/views/DisplayMovieList";
+import MovieDetail from "@/views/MovieDetail";
+import ComingSoonView from "@/views/ComingSoonView";
 const routes = [
-    {
-        path: "",
-        name: "home",
-        component: HomeView,
-    },
-    {
-        path: "/signup",
-        name: "RegisterView",
-        component: RegisterView,
-    },
-    {
-        path: "/login",
-        name: "AuthView",
-        component: AuthView,
-    },
+  {
+    path: "",
+    name: "home",
+    component: HomeView,
+  },
+  {
+    path: "/signup",
+    name: "RegisterView",
+    component: RegisterView,
+  },
+  {
+    path: "/login",
+    name: "AuthView",
+    component: AuthView,
+  },
+  {
+    path: "/movies",
+    name: "displayMovie",
+    component: DisplayMovieList,
+    // children:[{
+    //     path:'/movies/detail/:id',
+    //     name:"movieDetail",
+    //     props : true,
+    //     component:MovieDetail
+    // }],
+  },
+  {
+    path: "/movies/detail/:id",
+    name: "movieDetail",
+    props: true,
+    component: MovieDetail,
+  },
+  {
+    path: "/comingsoon",
+    name: "comingSoon",
+    component: ComingSoonView,
+  },
 ];
 
 const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
-    routes,
-    linkActiveClass: 'current'
+  history: createWebHistory(process.env.BASE_URL),
+  routes,
+  linkActiveClass: "current",
 });
 
 export default router;
