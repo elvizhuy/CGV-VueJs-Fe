@@ -10,23 +10,29 @@
       <a href="">CAREERS</a>
       <a href="">NEWS & OFFERS</a>
       <a href="">MY TICKETS</a>
-      <router-link to="/login">ACCOUNT</router-link>
+      <router-link :to="{name:'app.login'}">ACCOUNT</router-link>
     </div>
     <div id="line">
       <div class="nav-content">
-        <a class="CGV-logo" href="/"
+        <router-link class="CGV-logo" :to="{name:'app.home'}"
           ><img src="../../public/assets/logo/cgvlogo.png" alt=""
-        /></a>
+        /></router-link>
 
         <ul id="nav-bar">
           <li class="movies">
-            <a @click="displayList" href="#">MOVIES</a>
-            <div v-if="isDisplay" class="coming-showing d-flex flex-column">
-              <a href="/movies">Now showing</a>
-              <a href="/comingsoon">Coming soon</a>
+            <a @mouseover="displayList" href="#">MOVIES</a>
+            <div v-if="isDisplay" class="coming-showing d-flex flex-column text-start" @mouseleave="hide">
+              <router-link class="mb-3" :to="{name:'app.movies'}">Now showing</router-link>
+              <router-link :to="{name:'app.coming-soon'}">Coming soon</router-link>
             </div>
           </li>
-          <li class="theater"><a href="">THEATER</a></li>
+          <li class="theater"><a href="#" @mouseenter.stop="displayCinemaList">THEATER</a>
+            <div v-if="isCinemaDisplay" id="theater" class="coming-showing d-flex flex-column text-start" @mouseleave="hide">
+              <router-link :to="{name:'app.cinema'}">All cinemas</router-link>
+              <router-link to="">Special Cinema</router-link>
+              <router-link to="">3D Cinema</router-link>
+            </div>
+          </li>
           <li><a href="">MEMBERSHIP</a></li>
           <li><a href="">CULTUREPLEX</a></li>
         </ul>
@@ -43,12 +49,25 @@
 export default {
   data(){
     return{
-      isDisplay:false
+      isDisplay:false,
+      isCinemaDisplay:false
     }
   },
   methods:{
+    move(event){
+      console.log(event.clientX, event.clientY);
+    },
+    hide(){
+      this.isCinemaDisplay = false
+      this.isDisplay = false
+    },
     displayList () {
       this.isDisplay = !this.isDisplay
+      this.isCinemaDisplay = false
+    },
+    displayCinemaList () {
+      this.isCinemaDisplay = !this.isCinemaDisplay
+      this.isDisplay = false
     }
   }
 };
@@ -81,9 +100,7 @@ export default {
 #nav-bar .coming-showing > a {
   color: white;
 }
-#nav-bar .coming-showing > a:first-child {
-  margin-bottom: 20px;
-}
+
 .header-languages a {
   text-decoration: none;
   color: rgb(73 73 73);
@@ -113,6 +130,9 @@ export default {
   color: black;
   font-weight: bold;
   letter-spacing: 1px;
+}
+#theater a:first-child{
+  height: 40px;
 }
 .nav-content {
   position: absolute;

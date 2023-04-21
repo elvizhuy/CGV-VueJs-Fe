@@ -1,13 +1,10 @@
 <template>
-  <showing-cinema-list></showing-cinema-list>
+  <h1></h1>
 </template>
 
 <script>
-import ShowingCinemaList from "./ShowingCinemaList.vue"
-
-
 export default {
-  components: { ShowingCinemaList },
+  components: { },
 
 }
 </script>

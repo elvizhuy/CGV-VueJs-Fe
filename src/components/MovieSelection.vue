@@ -4,15 +4,11 @@
     style="width: 1050px"
   >
     <div class="title d-flex flex-row align-items-center">
-      <div
-        class="title-movie-selection d-flex justify-content-center"
-      ></div>
+      <div class="title-movie-selection d-flex justify-content-center"></div>
       <div class="img-movie-s">
         <img src="../../public/assets/logo/h3_movie_selection.gif" alt="" />
       </div>
-      <div
-        class="title-movie-selection d-flex justify-content-center"
-      ></div>
+      <div class="title-movie-selection d-flex justify-content-center"></div>
     </div>
 
     <div id="movie-select-carousel " class="container">

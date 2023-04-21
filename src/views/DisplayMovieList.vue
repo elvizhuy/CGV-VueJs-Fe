@@ -1,14 +1,10 @@
 <template>
-  <header id="header">
-    <the-header></the-header>
-  </header>
   <main>
     <div id="container">
       <div class="row d-flex justify-content-center">
         <div class="now-showing-title col-12">
           <h1>Now Showing</h1>
-          <!-- <div><router-link :to="{name:comingSoon}">coming soon</router-link></div> -->
-          <div class="coming-soon"><a href="/comingsoon">COMING SOON</a></div>
+          <div class="coming-soon"><router-link :to="{name:'app.coming-soon'}">COMING SOON</router-link></div>
         </div>
         <div
           class="movie-list-item col-3"
@@ -16,7 +12,7 @@
           :key="index"
         >
           <div class="movie-img">
-            <router-link :to="{ name: 'movieDetail', params: { id: movie.id } }"
+            <router-link :to="{ name: 'app.movie-detail', params: { id: movie.id } }"
               ><img
                 @click="showMovieDetail(index)"
                 class="img"
@@ -39,9 +35,6 @@
       </div>
     </div>
   </main>
-  <footer>
-    <the-footer></the-footer>
-  </footer>
 </template>
 
 <script>
