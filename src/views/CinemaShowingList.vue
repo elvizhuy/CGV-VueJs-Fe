@@ -9,13 +9,14 @@
               <h1>CGV CINEMAS</h1>
             </div>
             <div id="city-list" class="row d-flex flex-row justify-content-center mt-5 m-auto py-3">
-              <div class="city-name mb-3" v-for="(city,index) in getCityList" :key="index">
-                <a @click="showCinemaList(city.id)" class="text-white m-0">{{ city.name }}</a>
+              <div class="city-name col-3 mb-3 text-center" v-for="(city,index) in getCityList" :key="index">
+                <a @click="showCinemaList(city.id)" id="city-link" class="city-link m-0">{{ city.name }}</a>
               </div>
+             
             </div>
             <div v-if="show" class="row d-flex flex-row justify-content-center mt-5">
-              <div class="city-name mb-3" v-for="(cinema,index) in getCinemaList" :key="index">
-                <a class="text-white m-0">{{ cinema.name }}</a>
+              <div class="cinema-name mb-3" v-for="(cinema,index) in getCinemaList" :key="index">
+                <a class="m-0">{{ cinema.name }}</a>
               </div>
             </div>
           </div>
@@ -35,15 +36,16 @@ export default {
   name: "CinemaShowingList",
   data() {
     return {
-      show: false
+      show: false,
+      // cityArr : []
     }
   },
   created() {
     this.getCitiesList()
-    // this.showCinemaList()
   },
   computed: {
     ...mapGetters(['getCityList', 'getCinemaList'])
+    
   },
   methods: {
     getCitiesList() {
@@ -53,7 +55,7 @@ export default {
     showCinemaList(id) {
       store.dispatch('showCinemaList', id)
       this.show = true
-    }
+    },
   },
   components: {},
 }
@@ -105,11 +107,18 @@ export default {
 }
 
 .city-name {
-  width: 200px;
   cursor: pointer;
 }
-
+.cinema-name{
+  font-size: 13px;
+  width: 250px;
+  cursor: pointer;
+}
+.cinema-name:hover a,.city-name:hover a{
+  color:red
+}
 a {
+  color:white;
   text-decoration: none;
 }
 
