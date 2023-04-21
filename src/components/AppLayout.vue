@@ -1,13 +1,13 @@
 <template>
-  <h1></h1>
+$END$
 </template>
 
 <script>
 export default {
-
+name: "AppLayout"
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
