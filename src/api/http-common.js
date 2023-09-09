@@ -2,7 +2,7 @@ import axios from 'axios'
 // import store from "@/store";
 // import router from "@/router";
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:3456/api/v1/',
+    baseURL: 'http://10.0.0.50:3456/api/v1/',
     headers: {
         'Content-type': '*',
         Accept: "*",
