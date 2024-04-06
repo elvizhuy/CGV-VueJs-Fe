@@ -1,7 +1,15 @@
 stages:
+  - sync
   - build
   - test
   - deploy
+
+sync:
+  stage: sync
+  script:
+    - git remote add github https://github.com/elvizhuy/CGV-VueJs-Fe.git
+    - git pull github master
+    - git push origin master
 
 cache:
   key: ${CI_COMMIT_REF_SLUG}
